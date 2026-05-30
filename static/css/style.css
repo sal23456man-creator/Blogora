@@ -121,4 +121,84 @@ grid-template-columns:1fr 1fr;
 .hero h1{
 font-size:42px;
 }
+}/* Login / Register Responsive */
+
+.auth-page{
+    min-height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px 20px;
+    background:linear-gradient(135deg,#ede9fe,#fce7f3,#dbeafe);
+}
+
+.auth-box{
+    width:100%;
+    max-width:450px;
+    background:white;
+    padding:50px;
+    border-radius:30px;
+    box-shadow:0 20px 50px rgba(0,0,0,0.08);
+    text-align:center;
+}
+
+.auth-box h1{
+    font-size:38px;
+    color:#6d28d9;
+    margin-bottom:10px;
+}
+
+.auth-box p{
+    color:#64748b;
+    margin-bottom:25px;
+}
+
+.auth-box input{
+    width:100%;
+    padding:16px;
+    margin:12px 0;
+    border:none;
+    border-radius:15px;
+    background:#f5f3ff;
+    font-size:16px;
+}
+
+.auth-box button{
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:15px;
+    background:linear-gradient(90deg,#8b5cf6,#ec4899);
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.switch-auth{
+    margin-top:20px;
+}
+
+.switch-auth a{
+    color:#8b5cf6;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+/* Mobile responsiveness */
+@media(max-width:768px){
+
+    .auth-box{
+        padding:30px 20px;
+        border-radius:20px;
+    }
+
+    .auth-box h1{
+        font-size:28px;
+    }
+
+    .auth-box input,
+    .auth-box button{
+        padding:14px;
+        font-size:14px;
+    }
 }

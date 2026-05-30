@@ -1,12 +1,40 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<div class="create-box">
-<form method="POST">
-<input type="email" name="email" placeholder="Email">
-<input type="password" name="password" placeholder="Password">
-<button>Login</button>
-</form>
-</div>
+<section class="auth-page">
+
+    <div class="auth-box">
+
+        <h1>Welcome Back</h1>
+        <p>Login to continue your journey on WanderVerse</p>
+
+        <form method="POST">
+
+            <input 
+                type="email" 
+                name="email" 
+                placeholder="Enter your email"
+                required
+            >
+
+            <input 
+                type="password" 
+                name="password" 
+                placeholder="Enter password"
+                required
+            >
+
+            <button type="submit">Login</button>
+
+        </form>
+
+        <p class="switch-auth">
+            Don't have an account?
+            <a href="/register">Register</a>
+        </p>
+
+    </div>
+
+</section>
 
 {% endblock %}
