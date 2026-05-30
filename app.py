@@ -75,7 +75,7 @@ def logout():
     return redirect('/')
 
 
-@app.route('/create', methods=['GET','POST'])
+@app.route('/create', methods=['GET', 'POST'])
 def create():
 
     if 'user' not in session:
@@ -87,12 +87,20 @@ def create():
         content = request.form['content']
         category = request.form['category']
 
-        image = request.files.get('image')
         filename = None
 
-        if image and image.filename:
-            filename = secure_filename(image.filename)
-            image.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        if 'image' in request.files:
+            image = request.files['image']
+
+            if image and image.filename != '':
+                filename = secure_filename(image.filename)
+
+                upload_path = os.path.join(
+                    app.config['UPLOAD_FOLDER'],
+                    filename
+                )
+
+                image.save(upload_path)
 
         post = Post(
             title=title,
