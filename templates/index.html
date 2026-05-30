@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<section class="hero">
+    <h1>Stories That Move The World</h1>
+    <p>Travel, Art, Food, Fashion & Thoughts</p>
+</section>
+
+<section class="categories">
+    <div class="cat travel">🌍 Travel</div>
+    <div class="cat cooking">🍲 Cooking</div>
+    <div class="cat art">🎨 Art</div>
+    <div class="cat tech">💻 Tech</div>
+    <div class="cat fashion">👗 Fashion</div>
+    <div class="cat thoughts">💭 Thoughts</div>
+</section>
+
+<section class="stories">
+
+{% for post in posts %}
+<div class="card">
+
+{% if post.image %}
+<img src="{{ url_for('static', filename='uploads/' + post.image) }}">
+{% endif %}
+
+<h2>{{ post.title }}</h2>
+<p>{{ post.content[:120] }}...</p>
+
+<p>By {{ post.author }}</p>
+<span>{{ post.category }}</span>
+
+<a href="/post/{{ post.id }}">Read</a>
+<a href="/like/{{ post.id }}">❤️ {{ post.likes }}</a>
+<a href="/delete/{{ post.id }}">🗑 Delete</a>
+
+</div>
+{% endfor %}
+
+</section>
+
+{% endblock %}

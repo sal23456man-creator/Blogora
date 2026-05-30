@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="post-page">
+<h1>{{ post.title }}</h1>
+
+{% if post.image %}
+<img src="{{ url_for('static', filename='uploads/' + post.image) }}">
+{% endif %}
+
+<p>{{ post.content }}</p>
+</div>
+
+{% endblock %}

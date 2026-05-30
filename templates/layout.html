@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WanderVerse</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">🌍 WanderVerse</div>
+
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/create">Write</a>
+        <a href="/login">Login</a>
+    </div>
+</nav>
+
+{% block content %}{% endblock %}
+
+<footer>
+    WanderVerse © 2026
+</footer>
+
+</body>
+</html>
