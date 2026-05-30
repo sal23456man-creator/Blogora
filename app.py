@@ -4,7 +4,7 @@ from werkzeug.utils import secure_filename
 import os
 
 app = Flask(__name__)
-app.secret_key = "wanderverse-secret"
+app.secret_key = "Blogora-secret"
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
