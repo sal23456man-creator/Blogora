@@ -2,28 +2,28 @@
 {% block content %}
 
 <div class="create-box">
+    <h2>Create Story</h2>
 
-<form method="POST" enctype="multipart/form-data">
+    <form method="POST" enctype="multipart/form-data">
 
-<input type="text" name="title" placeholder="Story Title" required>
+        <input type="text" name="title" placeholder="Story Title" required>
 
-<select name="category" required>
-<option>Travel</option>
-<option>Cooking</option>
-<option>Art</option>
-<option>Technology</option>
-<option>Fashion</option>
-<option>Thoughts</option>
-</select>
+        <select name="category" required>
+            <option>Travel</option>
+            <option>Cooking</option>
+            <option>Art</option>
+            <option>Technology</option>
+            <option>Fashion</option>
+            <option>Thoughts</option>
+        </select>
 
-<textarea name="content" placeholder="Write your beautiful story..." required></textarea>
+        <textarea name="content" placeholder="Write your story..." required></textarea>
 
-<input type="file" name="image" accept="image/*">
+        <input type="file" name="image" accept="image/*">
 
-<button type="submit">Publish Story</button>
+        <button type="submit">Publish Story</button>
 
-</form>
-
+    </form>
 </div>
 
 {% endblock %}

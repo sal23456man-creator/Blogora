@@ -74,7 +74,6 @@ def logout():
     session.pop('user', None)
     return redirect('/')
 
-
 @app.route('/create', methods=['GET', 'POST'])
 def create():
 
@@ -83,24 +82,24 @@ def create():
 
     if request.method == 'POST':
 
-        title = request.form['title']
-        content = request.form['content']
-        category = request.form['category']
+        title = request.form.get('title')
+        content = request.form.get('content')
+        category = request.form.get('category')
 
         filename = None
 
-        if 'image' in request.files:
-            image = request.files['image']
+        image = request.files.get('image')
 
-            if image and image.filename != '':
-                filename = secure_filename(image.filename)
+        if image and image.filename != '':
 
-                upload_path = os.path.join(
-                    app.config['UPLOAD_FOLDER'],
-                    filename
-                )
+            filename = secure_filename(image.filename)
 
-                image.save(upload_path)
+            upload_folder = app.config['UPLOAD_FOLDER']
+
+            if not os.path.exists(upload_folder):
+                os.makedirs(upload_folder)
+
+            image.save(os.path.join(upload_folder, filename))
 
         post = Post(
             title=title,
